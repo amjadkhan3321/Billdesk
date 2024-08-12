@@ -169,7 +169,7 @@ class NavigationController extends GetxController {
       var json = sdkConfig.sdkConfigJson.toJson();
       _filterJsonProperty(json);
       var config = jsonEncode(json);
-      var sdkBuildInfo = await _getBuildInfo();
+      // var sdkBuildInfo = await _getBuildInfo();
 
       await controller.evaluateJavascript(source: """
 
