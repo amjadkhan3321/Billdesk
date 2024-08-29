@@ -295,10 +295,10 @@ class NavigationController extends GetxController {
   }
 
   _getBuildInfo() async {
-    final fileContent = await rootBundle.loadString(
-      "packages/billDeskSDK/files/info.json",
-    );
-
+    // final fileContent = await rootBundle.loadString(
+    //   "packages/billDeskSDK/files/info.json",
+    // );
+    const fileContent = '{"version":"1.0.2","build":2023121411}';
     return jsonDecode(fileContent);
   }
 
