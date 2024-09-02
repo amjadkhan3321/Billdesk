@@ -1,16 +1,15 @@
 library sdk;
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../sdk.dart';
 import '../controller/navigation_controller.dart';
 
 class BilldeskSDKWebview extends StatefulWidget {
-
   final SdkConfig sdkConfig;
 
-  const BilldeskSDKWebview({Key? key, required this.sdkConfig}) : super(key: key);
+  const BilldeskSDKWebview({Key? key, required this.sdkConfig})
+      : super(key: key);
 
   @override
   State<BilldeskSDKWebview> createState() => _BilldeskSDKWebviewState();
@@ -18,7 +17,6 @@ class BilldeskSDKWebview extends StatefulWidget {
 
 class _BilldeskSDKWebviewState extends State<BilldeskSDKWebview>
     with WidgetsBindingObserver {
-
   late NavigationController navigationController;
 
   bool upiTriggered = false;
@@ -32,9 +30,11 @@ class _BilldeskSDKWebviewState extends State<BilldeskSDKWebview>
 
     return WillPopScope(
       onWillPop: () async {
-        final shouldNavigateBack = await navigationController.showConfirmationDialog(context);
+        final shouldNavigateBack =
+            await navigationController.showConfirmationDialog(context);
         if (shouldNavigateBack == true) {
-          navigationController.sdkWebViewController.exitAndInvokeCallback(true, null,context);
+          navigationController.sdkWebViewController
+              .exitAndInvokeCallback(false, null, context);
           return true;
         }
         return false;
@@ -42,12 +42,13 @@ class _BilldeskSDKWebviewState extends State<BilldeskSDKWebview>
       child: Scaffold(
           body: SafeArea(
               child: Column(children: <Widget>[
-                Expanded(
-                  child: Stack(
-                      children: navigationController.getInAppWebViewInstance(context,)
-                  ),
-                )
-              ]))),
+        Expanded(
+          child: Stack(
+              children: navigationController.getInAppWebViewInstance(
+            context,
+          )),
+        )
+      ]))),
     );
   }
 
@@ -69,7 +70,8 @@ class _BilldeskSDKWebviewState extends State<BilldeskSDKWebview>
     super.didChangeAppLifecycleState(state);
     if (state == AppLifecycleState.resumed) {
       if (upiTriggered == true) {
-        navigationController.sdkWebViewController.exitAndInvokeCallback(true, null,context);
+        navigationController.sdkWebViewController
+            .exitAndInvokeCallback(true, null, context);
         upiTriggered = false;
       }
     } else if (state == AppLifecycleState.inactive) {
@@ -97,17 +99,17 @@ class SDKWebView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //SdkConfig config = Get.arguments;
 
     return FutureBuilder(
         future: BuildConfig.loadConfig(isUATEnv: config.isUATEnv),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return BilldeskSDKWebview(sdkConfig: config,);
+            return BilldeskSDKWebview(
+              sdkConfig: config,
+            );
           }
           return Text("Loading...");
         });
   }
 }
-
