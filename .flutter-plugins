@@ -1,6 +1,11 @@
 # This is a generated file; do not edit or check into version control.
-device_info_plus=/Users/Amjad/.pub-cache/hosted/pub.dev/device_info_plus-9.1.2/
-flutter_inappwebview=/Users/Amjad/.pub-cache/hosted/pub.dev/flutter_inappwebview-5.8.0/
+device_info_plus=/Users/Amjad/.pub-cache/hosted/pub.dev/device_info_plus-11.3.0/
+flutter_inappwebview=/Users/Amjad/.pub-cache/hosted/pub.dev/flutter_inappwebview-6.1.5/
+flutter_inappwebview_android=/Users/Amjad/.pub-cache/hosted/pub.dev/flutter_inappwebview_android-1.1.3/
+flutter_inappwebview_ios=/Users/Amjad/.pub-cache/hosted/pub.dev/flutter_inappwebview_ios-1.1.2/
+flutter_inappwebview_macos=/Users/Amjad/.pub-cache/hosted/pub.dev/flutter_inappwebview_macos-1.1.2/
+flutter_inappwebview_web=/Users/Amjad/.pub-cache/hosted/pub.dev/flutter_inappwebview_web-1.1.2/
+flutter_inappwebview_windows=/Users/Amjad/.pub-cache/hosted/pub.dev/flutter_inappwebview_windows-0.6.0/
 safe_device=/Users/Amjad/.pub-cache/hosted/pub.dev/safe_device-1.1.7/
 url_launcher=/Users/Amjad/.pub-cache/hosted/pub.dev/url_launcher-6.3.0/
 url_launcher_android=/Users/Amjad/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.8/
