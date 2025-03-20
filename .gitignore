@@ -30,3 +30,6 @@ migrate_working_dir/
 .packages
 build/
 .qodo
+
+# FVM Version Cache
+.fvm/
